@@ -71,6 +71,11 @@ namespace NLog.Common
         }
 
         /// <summary>
+        /// ...
+        /// </summary>
+        public static void WBPMarker() { Trace("Using WBP custom NLog"); }
+
+        /// <summary>
         /// Gets or sets the internal log level.
         /// </summary>
         public static LogLevel LogLevel { get; set; }

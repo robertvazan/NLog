@@ -39,6 +39,7 @@ namespace NLog
     using JetBrains.Annotations;
 #if ASYNC_SUPPORTED
     using System.Threading.Tasks;
+    using NLog.Common;
 #endif
 
     /// <summary>

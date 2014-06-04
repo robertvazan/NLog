@@ -57,6 +57,8 @@ namespace NLog
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", Justification = "Using 'NLog' in message.")]
         internal static void Write(Type loggerType, TargetWithFilterChain targets, LogEventInfo logEvent, LogFactory factory)
         {
+            InternalLogger.Trace("Writing event {0} {1} {2}", logEvent.LoggerName, logEvent.Level, logEvent.Message);
+            
             if (targets == null)
             {
                 return;
@@ -92,6 +94,7 @@ namespace NLog
 
             for (var t = targets; t != null; t = t.NextInChain)
             {
+                InternalLogger.Trace("Writing to logger {0}", t.Target.Name);
                 if (!WriteToTargetWithFilterChain(t, logEvent, exceptionHandler))
                 {
                     break;
