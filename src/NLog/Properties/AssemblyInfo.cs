@@ -44,7 +44,7 @@ using System.Security;
 #elif NET4_0
     [assembly: AssemblyTitle("NLog for .NET Framework 4")]
 #elif NET4_5
-    [assembly: AssemblyTitle("NLog for .NET Framework 4.5")]
+    [assembly: AssemblyTitle("WBP NLog for .NET Framework 4.5")]
 #elif MONO_2_0
     [assembly: AssemblyTitle("NLog for Mono 2.0")]
 #elif NETCF2_0
@@ -69,10 +69,10 @@ using System.Security;
 #error Unrecognized build target - please update AssemblyInfo.cs
 #endif
 
-[assembly: AssemblyDescription("NLog")]
+[assembly: AssemblyDescription("WBP NLog")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("NLog")]
-[assembly: AssemblyCopyright("Copyright (c) 2004-2011 by Jaroslaw Kowalski")]
+[assembly: AssemblyCompany("WBP")]
+[assembly: AssemblyCopyright("Copyright (c) 2014 WBP")]
 [assembly: AssemblyCulture("")]
 
 [assembly: CLSCompliant(true)]
@@ -85,3 +85,5 @@ using System.Security;
 [assembly: SecurityRules(SecurityRuleSet.Level1)]
 #endif
 #endif
+
+[assembly: AssemblyVersion("2.1.0.2")]

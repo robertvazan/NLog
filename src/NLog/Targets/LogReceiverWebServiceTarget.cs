@@ -148,6 +148,7 @@ namespace NLog.Targets
             // lock is being held here
             if (this.inCall)
             {
+                InternalLogger.Trace("Buffering {0} messages, because we are in call", logEvents.Length);
                 foreach (var ev in logEvents)
                 {
                     this.buffer.Append(ev);
@@ -156,6 +157,7 @@ namespace NLog.Targets
                 return;
             }
 
+            InternalLogger.Trace("Sending {0} messages to server", logEvents.Length);
             var networkLogEvents = this.TranslateLogEvents(logEvents);
             this.Send(networkLogEvents, logEvents);
         }
@@ -351,6 +353,7 @@ namespace NLog.Targets
                 AsyncLogEventInfo[] bufferedEvents = this.buffer.GetEventsAndClear();
                 if (bufferedEvents.Length > 0)
                 {
+                    InternalLogger.Trace("Sending {0} buffered messages to server", bufferedEvents.Length);
                     var networkLogEvents = this.TranslateLogEvents(bufferedEvents);
                     this.Send(networkLogEvents, bufferedEvents);
                 }
