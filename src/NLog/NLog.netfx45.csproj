@@ -67,7 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyBuildInfo.cs" />
     <Compile Include="ComInterop\ComLogger.cs" />
     <Compile Include="ComInterop\ComLogManager.cs" />
     <Compile Include="ComInterop\IComLogger.cs">
